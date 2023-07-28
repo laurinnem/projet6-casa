@@ -3,7 +3,8 @@ import React from "react"
 export default function Error() {
     return(
         <div>
-            <h1>Test Erreur 404</h1>
+            <p>404<br/>Oups! La page que vous demandez n'existe pas.</p>
+            <a>Retournez sur la page d'acceuil</a>
         </div>
     )
 }
