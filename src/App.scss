@@ -1,25 +1,25 @@
-
-
 $font: Montserrat;
 $mainColor: #FF6060;
 
 
-.App{
+.App {
   display: flex;
   flex-direction: column;
   max-width: 1440px;
   margin: auto;
-  
-    .mainContent {
-      margin: 3% 7% 3% 7%;
-    }
 
-    a, h1, p{
-      font: 100% $font;
-      color: $mainColor;
-      text-decoration: none;
-      font-size: 24px;
-    }
+  .mainContent {
+    margin: 3% 7% 3% 7%;
+  }
+
+  a,
+  h1,
+  p {
+    font: 100% $font;
+    color: $mainColor;
+    text-decoration: none;
+    font-size: 24px;
+  }
 }
 
 // barre de navigation
@@ -31,11 +31,22 @@ $mainColor: #FF6060;
 
   .menuNavBar {
     display: flex;
-      width: 100%;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 30px;      
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
   }
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  padding-top: 40px;
+
+  p {
+    color: white;
+  }
+}
 

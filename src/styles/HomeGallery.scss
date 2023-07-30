@@ -1,0 +1,90 @@
+.contentHome {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .bannerImageHome {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        height: 223px;
+        overflow: hidden;
+        margin-bottom: 40px;
+        border-radius: 20px 20px 20px 20px;
+        text-align: center;
+
+
+
+        .imageHome {
+            object-position: 50% 50%;
+            object-fit: cover;
+
+        }
+
+        .overlay {
+            display: flex;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.2);
+            align-items: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .titleHome {
+            color: white;
+            font-size: 48px;
+            display: block;
+            position: absolute;
+            top: 20%;
+            left: 0;
+            right: 0;
+
+
+
+        }
+    }
+
+    .gallery {
+        flex-flow: row wrap;
+        width: 100%;
+        padding: 50px;
+        background-color: #F6F6F6;
+        border-radius: 20px;
+
+        // style for LocationCard
+        .locationCard {
+            position: relative;
+            display: flex;
+            flex-flow: row wrap;
+
+
+            .coverImage {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                max-width: 340px;
+                border-radius: 20px;
+
+            }
+
+            .titleCard {
+                display: flex;
+                white-space: pre-wrap;
+                word-break: break-word;
+                font-size: 18px;
+                color: black;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+
+
+            }
+        }
+    }
+}
