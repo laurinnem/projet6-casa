@@ -14,6 +14,8 @@ $mainColor: #FF6060;
 
   a,
   h1,
+  h2,
+  h3,
   p {
     font: 100% $font;
     color: $mainColor;
@@ -36,6 +38,9 @@ $mainColor: #FF6060;
     align-items: center;
     gap: 30px;
   }
+  // &.active {
+  //   text-decoration: underline;
+  // }
 }
 
 .footer {

@@ -10,7 +10,8 @@ export default function LocationCard(props) {
         alt="aperçu de la location"
         style={{ overflowClipMargin: "unset;" }}
       ></img>
-      <h1 className="titleCard">{props.title}</h1>
+      <div className="overlayCard"></div>
+      <h2 className="titleCard">{props.title}</h2>
     </div>
   );
 }
