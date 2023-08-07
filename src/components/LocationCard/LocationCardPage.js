@@ -30,50 +30,53 @@ export default function LocationCardPage({ galleryData }) {
       </div>
 
       <div className="locationPageHeader">
-        <div className="locationPageHeader1">
-          <h1>{location.title}</h1>
-          <h2>{location.location}</h2>
+        <div className="locationPageHeaderLeft">
+          <div className="locationPageHeader1">
+            <h1>{location.title}</h1>
+            <h2>{location.location}</h2>
+          </div>
+          <div className="locationPageHeader2-tags">
+            <ul>
+              {location.tags.map((tag, index) => (
+                <li className="singleTag" key={index}>
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className="locationPageHeader2">
-          <p className="hostName">{location.host.name}</p>
-          <img className="hostPicture" src={location.host.picture}></img>
-        </div>
+        <div className="locationPageHeaderRight">
+          <div className="locationPageHeader3">
+            <p className="hostName">{location.host.name}</p>
+            <img className="hostPicture" src={location.host.picture}></img>
+          </div>
 
-        <div className="locationPageHeader3-tags">
-          <ul>
-            {location.tags.map((tag, index) => (
-              <li className="singleTag" key={index}>
-                {tag}
-              </li>
+          <div className="locationPageHeader4-stars">
+            {Array.from({ length: orangeStars }).map((_, index) => (
+              <img
+                key={`orange-star-${location.id}-${index + 1}`}
+                src={starOrange}
+                alt="orange star"
+              />
             ))}
-          </ul>
-        </div>
-        <div className="locationPageHeader4-stars">
-          {Array.from({ length: orangeStars }).map((_, index) => (
-            <img
-              key={`orange-star-${location.id}-${index + 1}`}
-              src={starOrange}
-              alt="orange star"
-            />
-          ))}
-
-          {Array.from({ length: greyStars }).map((_, index) => (
-            <img
-              key={`grey-star-${location.id}-${index + orangeStars + 1}`}
-              src={starGrey}
-              alt="grey star"
-            />
-          ))}
+            {Array.from({ length: greyStars }).map((_, index) => (
+              <img
+                key={`grey-star-${location.id}-${index + orangeStars + 1}`}
+                src={starGrey}
+                alt="grey star"
+              />
+            ))}
+          </div>
         </div>
       </div>
       <div className="ongletsLocationPage">
         <Onglet
-          className="ongletSingleLocationPage"
+          id="ongletDescription"
           title="Description"
           text={location.description}
         />
         <Onglet
-          className="ongletSingleLocationPage"
+          id="ongletEquipement"
           title="Equipement"
           text={
             <ul>

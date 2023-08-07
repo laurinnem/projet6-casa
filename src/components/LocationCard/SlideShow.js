@@ -34,15 +34,16 @@ const SlideShow = ({ pictures }) => {
             alt="Previous"
             onClick={prevSlide}
           />
-          <span className="slideShowCounter">
-            {currentSlide + 1}/{pictures.length}
-          </span>
+
           <img
             className="slideShowArrowIcon slideShowArrowIcon--next"
             src={rightArrowIcon}
             alt="Next"
             onClick={nextSlide}
           />
+          <span className="slideShowCounter">
+            {currentSlide + 1}/{pictures.length}
+          </span>
         </div>
       )}
     </div>

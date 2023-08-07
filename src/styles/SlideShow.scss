@@ -1,3 +1,6 @@
+$font: Montserrat;
+$mainColor: #ff6060;
+
 .slideShow {
   position: relative;
   width: 100%;
@@ -21,15 +24,22 @@
     .slideShowArrowIcon {
       cursor: pointer;
       height: 30px;
-      margin: 0 10px;
+      margin: 0;
     }
 
     .slideShowArrowIcon--prev {
+      width: 47px;
+      height: 80px;
+    }
+    .slideShowArrowIcon--next {
+      width: 47px;
+      height: 80px;
     }
   }
 
   .slideShowCounter {
     color: white;
-    font-size: 16px;
+    font-family: $font;
+    font-size: 18px;
   }
 }

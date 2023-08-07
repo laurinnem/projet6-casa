@@ -1,6 +1,5 @@
 $font: Montserrat;
-$mainColor: #FF6060;
-
+$mainColor: #ff6060;
 
 .App {
   display: flex;
@@ -16,6 +15,7 @@ $mainColor: #FF6060;
   h1,
   h2,
   h3,
+  li,
   p {
     font: 100% $font;
     color: $mainColor;
@@ -54,4 +54,3 @@ $mainColor: #FF6060;
     color: white;
   }
 }
-
