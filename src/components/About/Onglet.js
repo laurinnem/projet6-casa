@@ -22,7 +22,7 @@ export default function Onglet({ title, text }) {
   return (
     <div className="onglet">
       <div className="ongletHeader" onClick={toggleTextVisibility}>
-        <h3 className="ongletTitle">{title}</h3>
+        <p className="ongletTitle">{title}</p>
         <img
           className={`arrow ${isTextVisible ? "rotate-up" : "rotate-down"}`}
           src={arrowIcon}
@@ -30,7 +30,7 @@ export default function Onglet({ title, text }) {
         />
       </div>
       <div
-        className={`ongletText ${isTextVisible ? "active" : ""}`}
+        className={`ongletText ${isTextVisible ? "active" : "inactive"}`}
         ref={ongletTextRef}
         style={{ maxHeight: ongletTextHeight }}
       >

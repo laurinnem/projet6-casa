@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/About.scss";
+import "../../styles/Onglets.scss";
 import Onglet from "./Onglet";
 import ImageAbout from "../../assets/ImageAbout.png";
 

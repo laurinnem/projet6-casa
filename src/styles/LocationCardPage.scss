@@ -1,0 +1,67 @@
+.locationPageContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .carrousel {
+  }
+
+  .locationPageHeader {
+    display: flex;
+
+    .locationPageHeader1 {
+      h1 {
+        font-size: 36px;
+      }
+      h2 {
+        font-size: 18px;
+      }
+    }
+    .locationPageHeader2 {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      width: 167px;
+      height: 64px;
+
+      .hostName {
+        font-size: 18px;
+        word-wrap: break-word;
+        text-align: right;
+        padding-right: 10px;
+      }
+      .hostPicture {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+      }
+    }
+    .locationPageHeader3-tags {
+      ul {
+        display: flex;
+        list-style: none;
+      }
+      .singleTag {
+      }
+    }
+    .locationPageHeader4-stars {
+      display: flex;
+      flex-flow: row nowrap;
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  .ongletsLocationPage {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 100%;
+    .ongletSingleLocationPage {
+      width: 100%;
+    }
+  }
+}
