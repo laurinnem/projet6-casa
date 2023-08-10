@@ -1,37 +1,51 @@
 $font: Montserrat;
-$mainColor: #FF6060;
+$mainColor: #ff6060;
 
 .contentAbout {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .bannerImageAbout {
+    position: relative;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 223px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-radius: 20px 20px 20px 20px;
+    text-align: center;
 
+    .imageAbout {
+      max-width: 100%;
+      object-position: 50% 50%;
+      object-fit: cover;
+    }
+  }
+  .ongletsAbout {
+    display: flex;
+    flex-flow: column wrap;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 985px) {
+  .contentAbout {
     .bannerImageAbout {
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content: center;
-        width: 100%;
-        height: 223px;
-        overflow: hidden;
-        margin-bottom: 10px;
-        border-radius: 20px 20px 20px 20px;
-        text-align: center;
-
-
-
-        .imageAbout {
-            object-position: 50% 50%;
-            object-fit: cover;
-
-        }
+      margin-bottom: 0px;
+      border-radius: 10px 10px 10px 10px;
     }
     .ongletsAbout {
-        display: flex;
-        flex-flow: column wrap;
-        margin-left: 5%;
-        margin-right: 5%;
-        width: 90%;
+      display: flex;
+      flex-flow: column wrap;
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
     }
+  }
 }

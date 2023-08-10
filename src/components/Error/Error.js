@@ -6,9 +6,7 @@ export default function Error() {
   return (
     <div className="contentError">
       <p className="errorNumber">404</p>
-      <p classname="errorMessage">
-        Oups! La page que vous demandez n'existe pas.
-      </p>
+      <p id="errorMessage">Oups! La page que vous demandez n'existe pas.</p>
       <Link className="linkHome" to="/">
         Retournez sur la page d'acceuil
       </Link>

@@ -1,106 +1,165 @@
 .contentHome {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 
-    .bannerImageHome {
+  .bannerImageHome {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 223px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    border-radius: 20px 20px 20px 20px;
+    text-align: center;
+
+    .imageHome {
+      max-width: 100%;
+      object-position: 50% 50%;
+      object-fit: cover;
+    }
+
+    .overlay {
+      display: flex;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.2);
+      align-items: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .titleHome {
+      color: white;
+      font-size: 48px;
+      display: block;
+      position: absolute;
+      top: 20%;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    max-width: 100%;
+
+    padding: 20px 10px 20px 10px;
+    background-color: #f6f6f6;
+    border-radius: 20px;
+    a {
+      padding: 20px 20px 20px 20px;
+      // style for LocationCard
+      .locationCard {
         position: relative;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content: center;
-        width: 100%;
-        height: 223px;
-        overflow: hidden;
-        margin-bottom: 40px;
-        border-radius: 20px 20px 20px 20px;
-        text-align: center;
+        flex-flow: row wrap;
 
+        width: 340px;
+        height: 340px;
 
-
-        .imageHome {
-            object-position: 50% 50%;
-            object-fit: cover;
-
+        .coverImage {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          max-width: 340px;
+          border-radius: 10px;
         }
 
-        .overlay {
-            display: flex;
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.2);
-            align-items: center;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        .overlayCard {
+          display: flex;
+          position: absolute;
+          background: linear-gradient(to bottom, transparent 60%, black 120%);
+          border-radius: 10px;
+
+          width: 100%;
+          height: 100%;
         }
 
-        .titleHome {
-            color: white;
-            font-size: 48px;
-            display: block;
-            position: absolute;
-            top: 20%;
-            left: 0;
-            right: 0;
-
-
-
+        .titleCard {
+          display: flex;
+          white-space: pre-wrap;
+          word-break: break-word;
+          font-size: 18px;
+          color: white;
+          position: absolute;
+          bottom: 0;
+          padding-left: 20px;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1380px) {
+  .contentHome {
+    .gallery {
+      a {
+        width: 45%;
+        .locationCard {
+          width: 100%;
+
+          height: 300px;
+        }
+
+        .coverImage {
+          width: 100%;
+          max-width: 100% !important;
+        }
+        .overlayCard {
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 985px) {
+  .contentHome {
+    .bannerImageHome {
+      max-height: 111px;
+      margin-bottom: 5px;
+      border-radius: 10px 10px 10px 10px;
+
+      .titleHome {
+        font-size: 24px;
+      }
     }
 
     .gallery {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-evenly;
+      flex-direction: column;
+      padding: 10px 0px 10px 0px;
+      background-color: white;
+      width: 100%;
+      a {
         width: 100%;
-       
-        padding: 20px 0px 20px 0px;
-        background-color: #F6F6F6;
-        border-radius: 20px;
-
+        padding: 10px 0 10px 0;
         // style for LocationCard
         .locationCard {
-            position: relative;
-            display: flex;
-            flex-flow: row wrap;
-            width: 340px;
-            height: 340px;
-            margin: 10px;
+          width: 100%;
+          max-height: 255px;
 
-            .coverImage {
-                object-fit: cover;
-                width: 100%;
-                height: 100%;
-                max-width: 340px;
-                border-radius: 10px;
-
-            }
-
-            .overlayCard {
-                display: flex;
-                position: absolute;
-                background: linear-gradient(to bottom, transparent 60%, black 120%);
-                border-radius: 10px;
-
-                width: 100%;
-                height: 100%;
-            }
-
-            .titleCard {
-                display: flex;
-                white-space: pre-wrap;
-                word-break: break-word;
-                font-size: 18px;
-                color: white;
-                position: absolute;
-                bottom: 0;
-                padding-left: 20px;
-
-
-
-
-            }
+          .coverImage {
+            max-width: unset;
+          }
         }
+      }
     }
+  }
+}
+@media screen and (max-width: 430px) {
+  .contentHome {
+    .bannerImageHome {
+      .titleHome {
+        word-wrap: break-word;
+        text-align: left;
+        padding-left: 15px;
+      }
+    }
+  }
 }

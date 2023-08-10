@@ -70,14 +70,10 @@ export default function LocationCardPage({ galleryData }) {
         </div>
       </div>
       <div className="ongletsLocationPage">
+        <Onglet title="Description" text={location.description} />
+
         <Onglet
-          id="ongletDescription"
-          title="Description"
-          text={location.description}
-        />
-        <Onglet
-          id="ongletEquipement"
-          title="Equipement"
+          title="Equipements"
           text={
             <ul>
               {location.equipments.map((equipment, index) => (

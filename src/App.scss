@@ -1,56 +1,133 @@
 $font: Montserrat;
 $mainColor: #ff6060;
 
-.App {
-  display: flex;
-  flex-direction: column;
-  max-width: 1440px;
-  margin: auto;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 
-  .mainContent {
-    margin: 3% 7% 3% 7%;
-  }
-
-  a,
-  h1,
-  h2,
-  h3,
-  li,
-  p {
-    font: 100% $font;
-    color: $mainColor;
-    text-decoration: none;
-    font-size: 24px;
-  }
-}
-
-// barre de navigation
-.navBar {
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 30px;
-
-  .menuNavBar {
+  .App {
     display: flex;
-    width: 100%;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 30px;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: auto;
+    min-height: 100vh;
+
+    .mainContent {
+      margin: 3% 7% 3% 7%;
+      flex-grow: 1;
+    }
+
+    a,
+    h1,
+    h2,
+    h3,
+    li,
+    p {
+      font: 100% $font;
+      color: $mainColor;
+      text-decoration: none;
+      font-size: 24px;
+    }
   }
-  // &.active {
-  //   text-decoration: underline;
-  // }
+
+  // barre de navigation
+  .navBar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    .logoNavBar {
+      width: 210px;
+      height: 68px;
+    }
+
+    .menuNavBar {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 30px;
+    }
+    .active {
+      text-decoration: underline;
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding-top: 40px;
+    height: 209px;
+    width: 100%;
+
+    p {
+      color: white;
+    }
+  }
+  @media screen and (max-width: 985px) {
+    .App {
+      .mainContent {
+        margin: 2% 2% 2% 2%;
+      }
+    }
+
+    // barre de navigation
+
+    .logoNavbar {
+      width: 145px;
+      height: 47px;
+    }
+  }
 }
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: black;
-  padding-top: 40px;
+@media screen and (max-width: 768px) {
+  .App {
+    a,
+    h1,
+    h2,
+    h3,
+    li,
+    p {
+      font-size: 13px;
+      font: 100% $font;
+    }
 
-  p {
-    color: white;
+    // barre de navigation
+    .navBar {
+      margin-bottom: 20px;
+
+      .logoNavBarBox {
+        width: 145px;
+        height: 47px;
+        .logoNavbar {
+          width: 145px;
+          height: 47px;
+        }
+      }
+
+      .menuNavBar {
+        gap: 15px;
+        text-transform: uppercase;
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .footer {
+      padding-top: 20px;
+
+      p {
+        color: white;
+        font-size: 12px;
+      }
+    }
   }
 }

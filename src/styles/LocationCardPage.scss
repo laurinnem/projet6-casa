@@ -6,9 +6,6 @@ $mainColor: #ff6060;
   display: flex;
   flex-direction: column;
 
-  .carrousel {
-  }
-
   .locationPageHeader {
     display: flex;
     justify-content: space-between;
@@ -91,12 +88,109 @@ $mainColor: #ff6060;
   .ongletsLocationPage {
     display: flex;
     flex-direction: row;
-
+    justify-content: space-between;
     width: 100%;
-    #ongletDescription,
-    #ongletEquipement {
-      width: 50%;
-      font-size: 10px;
+    .onglet {
+      width: 47%;
+      .ongletHeader {
+        margin-top: 15px;
+        .ongletTitle {
+          font-size: 18px;
+        }
+      }
+      .ongletText,
+      li {
+        list-style: none;
+        font-size: 18px;
+      }
+      .ongletText {
+        ul {
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .locationPageContent {
+    .locationPageHeader {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .locationPageHeaderLeft {
+        .locationPageHeader1 {
+          h1 {
+            font-size: 18px;
+            margin-bottom: 3%;
+          }
+          h2 {
+            font-size: 14px;
+            margin-bottom: 2%;
+          }
+        }
+        .locationPageHeader2-tags {
+          ul {
+            margin: 0;
+          }
+          .singleTag {
+            min-width: 84px;
+            height: 18px;
+            font-size: 10px;
+            margin: 5px 10px 20px 0;
+
+            padding: 0 5px 0 5px;
+
+            border-radius: 5px;
+          }
+        }
+      }
+      .locationPageHeaderRight {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        .locationPageHeader3 {
+          width: 125px;
+          height: 33px;
+
+          .hostName {
+            font-size: 12px;
+          }
+          .hostPicture {
+            width: 32px;
+            height: 32px;
+          }
+        }
+
+        .locationPageHeader4-stars {
+          img {
+            width: 13px;
+            height: 13px;
+          }
+        }
+      }
+    }
+
+    .ongletsLocationPage {
+      flex-direction: column;
+
+      .onglet {
+        width: 100%;
+        .ongletHeader {
+          margin-top: 20px;
+          .ongletTitle {
+            font-size: 13px;
+          }
+        }
+        .ongletText,
+        li {
+          font-size: 12px;
+        }
+      }
     }
   }
 }

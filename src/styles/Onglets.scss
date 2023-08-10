@@ -81,3 +81,26 @@ $mainColor: #ff6060;
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .onglet {
+    .ongletHeader {
+      margin-top: 20px;
+      height: 30px;
+
+      .ongletTitle {
+        color: white;
+        font-size: 13px;
+      }
+
+      .arrow {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    .ongletText {
+      font-size: 12px;
+    }
+  }
+}

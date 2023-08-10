@@ -1,21 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import LogoOrangeD from "../../assets/LogoOrangeD.png";
-import LogoOrangeM from "../../assets/LogoOrangeM.png";
 
 export default function Navbar() {
   return (
     <div className="navBar" style={{ display: "flex" }}>
-      <img
-        className="logoNavbar"
-        src={LogoOrangeD}
-        // rajouter srcset x mobile
-        srcSet={LogoOrangeM}
-        alt="logo kasa"
-      ></img>
+      <div className="logoNavBarBox">
+        <img className="logoNavbar" src={LogoOrangeD} alt="logo kasa"></img>
+      </div>
       <nav className="menuNavBar">
-        <Link to="/">Accueil</Link>
-        <Link to="/About">A Propos</Link>
+        <NavLink exact to="/" activeClassName="active">
+          Accueil
+        </NavLink>
+        <NavLink to="/About" activeClassName="active">
+          A Propos
+        </NavLink>
       </nav>
     </div>
   );

@@ -28,19 +28,21 @@ const SlideShow = ({ pictures }) => {
 
       {pictures.length > 1 && (
         <div className="slideShowNav">
-          <img
-            className="slideShowArrowIcon slideShowArrowIcon--prev"
-            src={leftArrowIcon}
-            alt="Previous"
-            onClick={prevSlide}
-          />
+          <div className="arrows">
+            <img
+              className="slideShowArrowIcon slideShowArrowIcon--prev"
+              src={leftArrowIcon}
+              alt="Previous"
+              onClick={prevSlide}
+            />
 
-          <img
-            className="slideShowArrowIcon slideShowArrowIcon--next"
-            src={rightArrowIcon}
-            alt="Next"
-            onClick={nextSlide}
-          />
+            <img
+              className="slideShowArrowIcon slideShowArrowIcon--next"
+              src={rightArrowIcon}
+              alt="Next"
+              onClick={nextSlide}
+            />
+          </div>
           <span className="slideShowCounter">
             {currentSlide + 1}/{pictures.length}
           </span>
