@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useGallery } from "../../GalleryContext";
 
 import "../../styles/Onglets.scss";
 import "../../styles/LocationCardPage.scss";
@@ -12,17 +11,22 @@ import Onglet from "../About/Onglet";
 import starOrange from "../../assets/starOrange.png";
 import starGrey from "../../assets/starGrey.png";
 
-export default function LocationCardPage() {
-  const { galleryData } = useGallery();
+export default function LocationCardPage({ galleryData }) {
   const { id } = useParams();
+  const [location, setLocation] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!galleryData || galleryData.length === 0) {
-    return <div>Loading...</div>;
+  useEffect(() => {
+    const foundLocation = galleryData.find((item) => item.id === id);
+    setLocation(foundLocation || null);
+    setLoading(false);
+  }, [id, galleryData]);
+
+  if (loading) {
+    return <p>Loading...</p>;
   }
 
-  const location = galleryData.find((item) => item.id === id);
-
-  if (!location) {
+  if (location === null) {
     return <Error />;
   }
 
@@ -55,11 +59,7 @@ export default function LocationCardPage() {
         <div className="locationPageHeaderRight">
           <div className="locationPageHeader3">
             <p className="hostName">{location.host.name}</p>
-            <img
-              className="hostPicture"
-              src={location.host.picture}
-              alt="avatar de l'hôte"
-            ></img>
+            <img className="hostPicture" src={location.host.picture}></img>
           </div>
 
           <div className="locationPageHeader4-stars">
