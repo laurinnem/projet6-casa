@@ -14,13 +14,14 @@ export default function Router() {
         .then((response) => response.json())
         .then((data) => {
           setGalleryData(data);
-          console.log(galleryData);
+          console.log(data);
         })
+
         .catch((error) =>
           console.error("erreur lors du chargement du fichier JSON:", error)
         );
     } catch (error) {
-      console.error("Une erreur inattendue s'est produite:", error);
+      console.error("Une erreur s'est produite:", error);
     }
   }, []);
   return (
@@ -28,10 +29,12 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<Home galleryData={galleryData} />} />
         <Route path="/about" element={<About />} />
-        <Route
-          path="/location/:id"
-          element={<LocationCardPage galleryData={galleryData} />}
-        />
+        {galleryData.length > 0 && (
+          <Route
+            path="/location/:id"
+            element={<LocationCardPage galleryData={galleryData} />}
+          />
+        )}
         <Route path="/*" element={<Error />} />
       </Routes>
     </div>

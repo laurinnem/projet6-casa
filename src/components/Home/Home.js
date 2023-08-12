@@ -4,23 +4,7 @@ import LocationCard from "../LocationCard/LocationCard";
 import ImageHome from "../../assets/ImageHome.png";
 import { Link } from "react-router-dom";
 
-export default function Home() {
-  const [galleryData, setGalleryData] = useState([]);
-
-  useEffect(() => {
-    try {
-      fetch("./annonces.json")
-        .then((response) => response.json())
-        .then((data) => setGalleryData(data))
-        .then(console.log(galleryData))
-        .catch((error) =>
-          console.error("erreur lors du chargement du fichier JSON:", error)
-        );
-    } catch (error) {
-      console.error("Une erreur inattendue s'est produite:", error);
-    }
-  }, []);
-
+export default function Home({ galleryData }) {
   return (
     <div className="contentHome">
       <div className="bannerImageHome">
