@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "../../styles/HomeGallery.scss";
 import LocationCard from "../LocationCard/LocationCard";
 import ImageHome from "../../assets/ImageHome.png";

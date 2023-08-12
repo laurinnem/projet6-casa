@@ -4,25 +4,9 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import LocationCardPage from "./components/LocationCard/LocationCardPage";
 import Error from "./components/Error/Error";
+import galleryData from "./annonces.json";
 
 export default function Router() {
-  const [galleryData, setGalleryData] = useState([]);
-
-  useEffect(() => {
-    try {
-      fetch("./annonces.json")
-        .then((response) => response.json())
-        .then((data) => {
-          setGalleryData(data);
-          console.log("Gallery Data:", data);
-        })
-        .catch((error) =>
-          console.error("erreur lors du chargement du fichier JSON:", error)
-        );
-    } catch (error) {
-      console.error("Une erreur s'est produite:", error);
-    }
-  }, []);
   return (
     <div className="Router">
       <Routes>
