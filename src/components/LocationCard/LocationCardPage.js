@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useGallery } from "../../GalleryContext";
 
 import "../../styles/Onglets.scss";
 import "../../styles/LocationCardPage.scss";
@@ -11,22 +12,23 @@ import Onglet from "../About/Onglet";
 import starOrange from "../../assets/starOrange.png";
 import starGrey from "../../assets/starGrey.png";
 
-export default function LocationCardPage({ galleryData }) {
-  console.log(galleryData);
+export default function LocationCardPage() {
+  const { galleryData } = useGallery();
   const { id } = useParams();
 
-  if (galleryData.length === 0) {
+  if (!galleryData || galleryData.length === 0) {
     return <div>Loading...</div>;
   }
 
   const location = galleryData.find((item) => item.id === id);
-  //   Définition de la couleur des étoiles
-  const orangeStars = location.rating;
-  const greyStars = 5 - orangeStars;
 
   if (!location) {
     return <Error />;
   }
+
+  //   Définition de la couleur des étoiles
+  const orangeStars = location.rating;
+  const greyStars = 5 - orangeStars;
 
   return (
     <div className="locationPageContent">

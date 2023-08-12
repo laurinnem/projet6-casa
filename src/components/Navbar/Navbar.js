@@ -9,10 +9,10 @@ export default function Navbar() {
         <img className="logoNavbar" src={LogoOrangeD} alt="logo kasa"></img>
       </div>
       <nav className="menuNavBar">
-        <NavLink exact to="/" activeClassName="active">
+        <NavLink exact="true" to="/" activeclassname="active">
           Accueil
         </NavLink>
-        <NavLink to="/About" activeClassName="active">
+        <NavLink to="/About" activeclassname="active">
           A Propos
         </NavLink>
       </nav>

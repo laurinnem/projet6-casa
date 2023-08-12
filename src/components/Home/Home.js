@@ -3,8 +3,10 @@ import "../../styles/HomeGallery.scss";
 import LocationCard from "../LocationCard/LocationCard";
 import ImageHome from "../../assets/ImageHome.png";
 import { Link } from "react-router-dom";
+import { useGallery } from "../../GalleryContext";
 
-export default function Home({ galleryData }) {
+export default function Home() {
+  const { galleryData } = useGallery();
   return (
     <div className="contentHome">
       <div className="bannerImageHome">
