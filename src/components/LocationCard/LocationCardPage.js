@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import "../../styles/Onglets.scss";
@@ -13,15 +13,26 @@ import starGrey from "../../assets/starGrey.png";
 
 export default function LocationCardPage({ galleryData }) {
   const { id } = useParams();
-  const location = galleryData.find((item) => item.id === id);
+  const [location, setLocation] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const foundLocation = galleryData.find((item) => item.id === id);
+    setLocation(foundLocation || null);
+    setLoading(false);
+  }, [id, galleryData]);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (location === null) {
+    return <Error />;
+  }
 
   //   Définition de la couleur des étoiles
   const orangeStars = location.rating;
   const greyStars = 5 - orangeStars;
-
-  if (!location) {
-    return <Error />;
-  }
 
   return (
     <div className="locationPageContent">
