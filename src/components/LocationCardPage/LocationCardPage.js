@@ -6,7 +6,7 @@ import "../../styles/LocationCardPage.scss";
 
 import Error from "../Error/Error";
 import SlideShow from "./SlideShow";
-import Onglet from "../About/Onglet";
+import Onglet from "../Onglet";
 
 import starOrange from "../../assets/starOrange.png";
 import starGrey from "../../assets/starGrey.png";

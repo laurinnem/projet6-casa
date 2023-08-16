@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.scss";
 
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Router from "./Router";
 
 function App() {

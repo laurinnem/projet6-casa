@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import LogoOrangeD from "../../assets/LogoOrangeD.png";
+import { NavLink } from "react-router-dom";
+import LogoOrangeD from "../assets/LogoOrangeD.png";
 
 export default function Navbar() {
   return (

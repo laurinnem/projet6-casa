@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/HomeGallery.scss";
-import LocationCard from "../LocationCard/LocationCard";
+import LocationCard from "./LocationCard";
 import ImageHome from "../../assets/ImageHome.png";
 import { Link } from "react-router-dom";
 

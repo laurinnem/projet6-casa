@@ -23,7 +23,7 @@ const SlideShow = ({ pictures }) => {
       <img
         className="slideShowImage"
         src={pictures[currentSlide]}
-        alt={`Image ${currentSlide + 1}`}
+        alt={`Vue de la location ${currentSlide + 1}`}
       />
 
       {pictures.length > 1 && (

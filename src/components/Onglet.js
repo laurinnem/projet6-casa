@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import "../../styles/About.scss";
-import arrowIcon from "../../assets/arrow.png";
+import "../styles/About.scss";
+import arrowIcon from "../assets/arrow.png";
 
 export default function Onglet({ title, text }) {
   const [isTextVisible, setIsTextVisible] = useState(false);
