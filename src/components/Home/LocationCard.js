@@ -3,7 +3,7 @@ import "../../styles/HomeGallery.scss";
 
 export default function LocationCard(props) {
   const { title, cover } = props;
-
+  // Props passées depuis Home.js avec .map sur chaque item de galleryData
   return (
     <div className="locationCard">
       <img

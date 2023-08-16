@@ -12,12 +12,15 @@ import starOrange from "../../assets/starOrange.png";
 import starGrey from "../../assets/starGrey.png";
 
 export default function LocationCardPage({ galleryData }) {
+  // Récupère id de URL
   const { id } = useParams();
   const [location, setLocation] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Recherche dans galleryData l'item avec id correspondant
     const foundLocation = galleryData.find((item) => item.id === id);
+    // Modifie le state location en fonction de ce qui est trouvé ou non
     setLocation(foundLocation || null);
     setLoading(false);
   }, [id, galleryData]);
@@ -37,6 +40,7 @@ export default function LocationCardPage({ galleryData }) {
   return (
     <div className="locationPageContent">
       <div className="carrousel">
+        {/* Passe pictures comme prop au composant SlideShow */}
         <SlideShow pictures={location.pictures} />
       </div>
 
@@ -49,6 +53,7 @@ export default function LocationCardPage({ galleryData }) {
           <div className="locationPageHeader2-tags">
             <ul>
               {location.tags.map((tag, index) => (
+                // Création d'un tag pour chaque élément de location.tags
                 <li className="singleTag" key={index}>
                   {tag}
                 </li>
@@ -59,7 +64,11 @@ export default function LocationCardPage({ galleryData }) {
         <div className="locationPageHeaderRight">
           <div className="locationPageHeader3">
             <p className="hostName">{location.host.name}</p>
-            <img className="hostPicture" src={location.host.picture}></img>
+            <img
+              className="hostPicture"
+              src={location.host.picture}
+              alt="avatar de l'hôte"
+            ></img>
           </div>
 
           <div className="locationPageHeader4-stars">

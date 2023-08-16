@@ -10,6 +10,9 @@ export default function Router() {
   return (
     <div className="Router">
       <Routes>
+        {/* Home et LocationCardPage reçoivent les données de galleryData en tant que prop 
+        les URLs non valides sont renvoyées vers la page d'erreur avec "/*" 
+        l'ensemble du routage enveloppe toute l'application (BrowserRouter dans index.js) */}
         <Route path="/" element={<Home galleryData={galleryData} />} />
         <Route path="/about" element={<About />} />
         <Route
